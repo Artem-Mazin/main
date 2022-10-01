@@ -33,18 +33,21 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .card {
   width: 20em;
   background-color: aquamarine;
-  
+  margin: 1em;
+  border-radius: 1em;
 }
 .card__item {
  display: flex;
   flex-direction: column;
   padding: 2em;
+  
 }
 .card__title {
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1.7em;
   padding: 0.5em;
 }
 .card__image {
- 
+ max-height: 20em;
+ object-fit: cover;
 }

@@ -19,19 +19,19 @@ class card {
   }
 }
 new card(
-  'title',
-  'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/42842/yellow-square-emoji-clipart-md.png',
+  'The Informer',
+  'https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg',
   '.container',
 ).render();
 
 new card(
-  'title',
-  'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/42842/yellow-square-emoji-clipart-md.png',
+  'Leon',
+  'https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg',
   '.container',
 ).render();
 
 new card(
-  'title',
-  'https://creazilla-store.fra1.digitaloceanspaces.com/emojis/42842/yellow-square-emoji-clipart-md.png',
+  'Whiplash',
+  'https://www.film.ru/sites/default/files/movies/posters/3790998-1718031.jpeg',
   '.container',
 ).render();
