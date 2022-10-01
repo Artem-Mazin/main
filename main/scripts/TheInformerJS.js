@@ -9,10 +9,10 @@ class card {
     const element = document.createElement('div');
     element.innerHTML = `
     <div class="card">
-    <div class="card__item">
+    <a href='${this.link}' class="card__item">
       <h3 class="card__title">${this.title}</h3>
       <img src="${this.image}" class="card__image"></img>
-    </div>
+    </a>
     </div>
     `;
     this.parent.append(element);
@@ -24,14 +24,3 @@ new card(
   '.container',
 ).render();
 
-new card(
-  'Leon',
-  'https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg',
-  '.container',
-).render();
-
-new card(
-  'Whiplash',
-  'https://www.film.ru/sites/default/files/movies/posters/3790998-1718031.jpeg',
-  '.container',
-).render();
