@@ -23,35 +23,35 @@ new card(
   '/main/TheInformer.html',
   'The Informer',
   'https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg',
-  '.container',
+  '.content',
 ).render();
 
 new card(
   '/main/Leon.html',
   'Leon',
   'https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg',
-  '.container',
+  '.content',
 ).render();
 
 new card(
   '',
   'Whiplash',
   'https://www.film.ru/sites/default/files/movies/posters/3790998-1718031.jpeg',
-  '.container',
+  '.content',
 ).render();
 
 new card(
   '',
   'Interstellar',
   'https://www.film.ru/sites/default/files/movies/posters/1703315-663706.jpg',
-  '.container',
+  '.content',
 ).render();
 
 new card(
   '',
   'The Pianist',
   'https://www.film.ru/sites/default/files/movies/posters/1610623-621640.jpg',
-  '.container',
+  '.content',
 ).render();
 
 const clickHamb = document.querySelector('.hamb');
