@@ -54,3 +54,10 @@ new card(
   '.container',
 ).render();
 
+const clickHamb = document.querySelector('.hamb');
+const menu = document.querySelector('.menu');
+clickHamb.addEventListener("click", function() {
+menu.classList.toggle('_active');
+});
+
+
