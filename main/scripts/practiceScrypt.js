@@ -20,14 +20,14 @@ class card {
   }
 }
 new card(
-  '/main/TheInformer.html',
+  '/TheInformer.html',
   'The Informer',
   'https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg',
   '.content',
 ).render();
 
 new card(
-  '/main/Leon.html',
+  '/Leon.html',
   'Leon',
   'https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg',
   '.content',
