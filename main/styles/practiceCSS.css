@@ -161,15 +161,20 @@ h6 {
 /* скрытое меню */
 .menu {
   display: none;
-  background-color: burlywood;
+  background-color: dimgray;
   position: absolute;
+  margin: -0.75em -0.75em;
+  font-size: 2em;
+  border-radius: 0.5em;
 }
 .menu._active {
   display: block;
 }
 .menu li {
-  margin: 1em;
-  padding: 1em;
+  margin: 1em 2em;
+}
+.menu li:first-child {
+  margin-top: 3em;
 }
 a:link {
   color: #fff;
@@ -182,8 +187,7 @@ a:link {
 
 .left__poster {
   background: url(https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/ef613c33-08f6-4c7c-890e-3a0f5f71cf1d/orig)
-    no-repeat;
-  background-size: contain;
+    no-repeat top/contain;
   min-height: 50em;
   min-width: 30em;
   margin: 0 1em 1em 0;
