@@ -69,11 +69,17 @@ menu.addEventListener("mouseleave", function () {
 });
 
 // подсветка карточек
-const cards = document.querySelector(".card");
-const card__image = document.querySelector(".card__image");
-cards.addEventListener("mouseenter", function () {
-  card__image.style.height = "21em";
-});
-cards.addEventListener("mouseleave", function () {
-  card__image.style.height = "";
-});
+const cards = document.querySelectorAll(".card");
+const card__image = document.querySelectorAll(".card__image");
+
+cards.forEach(card => {
+  card.addEventListener('mouseenter', function (e) {
+    e.target.classList.add('card__active');
+  })
+})
+cards.forEach(card => {
+  card.addEventListener('mouseleave', function (e) {
+    e.target.classList.remove('card__active');
+  })
+})
+
