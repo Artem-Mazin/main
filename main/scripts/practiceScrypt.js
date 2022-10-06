@@ -84,8 +84,8 @@ new card(
 ).render();
 
 // открывание/закрывание меню
-const clickHamb = document.querySelector(".hamb");
-const menu = document.querySelector(".menu");
+const clickHamb = document.querySelector(".hamb"),
+  menu = document.querySelector(".menu");
 clickHamb.addEventListener("click", function () {
   menu.classList.toggle("_active");
 });
@@ -97,8 +97,8 @@ menu.addEventListener("mouseleave", function () {
 });
 
 // подсветка карточек
-const cards = document.querySelectorAll(".card");
-const card__image = document.querySelectorAll(".card__image");
+const cards = document.querySelectorAll(".card"),
+  card__image = document.querySelectorAll(".card__image");
 
 cards.forEach((card) => {
   card.addEventListener("mouseenter", function (e) {
@@ -111,17 +111,58 @@ cards.forEach((card) => {
   });
 });
 
-// смена левого постера
-const leftPoster = document.querySelector(".left__poster");
-setInterval(function () {
-  if (
-    (leftPoster.style.background =
-      "url(https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/ef613c33-08f6-4c7c-890e-3a0f5f71cf1d/orig) no-repeat top/contain")
-  ) {
-    leftPoster.style.background =
-      "url(https://www.film.ru/sites/default/files/movies/posters/1628481-1624630.jpeg) no-repeat top/contain";
-  } else {
-    leftPoster.style.background =
-      "url(https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/ef613c33-08f6-4c7c-890e-3a0f5f71cf1d/orig) no-repeat top/contain";
+// левый постер
+class left__poster {
+  constructor(link, image, parentSelector) {
+    this.link = link;
+    this.image = image;
+    this.parent = document.querySelector(parentSelector);
   }
-}, 3000);
+
+  render() {
+    const element = document.createElement("div");
+    element.innerHTML = `
+    <div class="left__poster">
+    <a href='${this.link}' class="left__poster__link">
+      <img src="${this.image}" class="left__poster__image"></img>
+    </a>
+    </div>
+    `;
+    this.parent.prepend(element);
+  }
+}
+new left__poster(
+  "",
+  "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/ef613c33-08f6-4c7c-890e-3a0f5f71cf1d/orig",
+  ".container"
+).render();
+
+new left__poster(
+  "",
+  "https://www.film.ru/sites/default/files/movies/posters/Pulp-Fiction-3.jpg",
+  ".container"
+).render();
+
+// смена постеров
+const posters = document.querySelectorAll(".left__poster");
+
+function hideLeftPosters() {
+  posters.forEach((poster) => {
+    poster.style.display = "none";
+  });
+}
+function showLeftPoster(i = 0) {
+  posters[i].style.display = "block";
+}
+hideLeftPosters();
+showLeftPoster();
+let i = 0;
+function nextPoster() {
+  hideLeftPosters();
+  showLeftPoster(i);
+  i++;
+  if (i >= posters.length) {
+    i = 0;
+  }
+}
+setInterval(nextPoster, 10000);
