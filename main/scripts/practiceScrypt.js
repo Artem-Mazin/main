@@ -10,9 +10,9 @@ class card {
   render() {
     const element = document.createElement("div");
     element.innerHTML = `
-    <div class="card">
+    <div class="card ">
     <a href='${this.link}' class="card__item" target="blank">
-      <h3 class="card__title">${this.title}</h3>
+      <h3 class="card__title searchDiv">${this.title}</h3>
       <img src="${this.image}" class="card__image"></img>
     </a>
     </div>
@@ -179,3 +179,20 @@ function changeWidth() {
 }
 // window.addEventListener('resize', changeWidth)
 changeWidth();
+
+// Поиск
+const search = document.querySelector('search'),
+input__text = document.querySelector('.input__text'),
+input__search = document.querySelector('.input__search'),
+searchText = document.querySelectorAll('.searchDiv');
+
+function searchFunction(text) {
+searchText.forEach((e) => {
+if (e.textContent == text) {
+  e.style.backgroundColor = 'red'
+}
+});
+}
+input__search.addEventListener('click', (e) =>{
+  searchFunction(input__text.value);
+})
