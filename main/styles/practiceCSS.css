@@ -128,6 +128,7 @@ h6 {
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: space-between
 }
 .hamb {
   display: block;
@@ -165,19 +166,18 @@ h6 {
 
 /* Поиск */
 .search {
-  margin: auto;
-
 }
 .input__text {
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 0.2em;
   border-radius: 0.2em;
 }
-.input__search {
-    font-size: 1.3em;
+.search__button {
+    font-size: 1.2em;
     padding: 0.2em;
   border-radius: 0.2em;
 }
+
 
 /* скрытое меню */
 .menu {

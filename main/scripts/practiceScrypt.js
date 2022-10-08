@@ -12,7 +12,7 @@ class card {
     element.innerHTML = `
     <div class="card ">
     <a href='${this.link}' class="card__item" target="blank">
-      <h3 class="card__title searchDiv">${this.title}</h3>
+      <h3 class="card__title search__film">${this.title}</h3>
       <img src="${this.image}" class="card__image"></img>
     </a>
     </div>
@@ -181,18 +181,21 @@ function changeWidth() {
 changeWidth();
 
 // Поиск
-const search = document.querySelector('search'),
-input__text = document.querySelector('.input__text'),
-input__search = document.querySelector('.input__search'),
-searchText = document.querySelectorAll('.searchDiv');
+const input__text = document.querySelector('.input__text'),
+      search__button = document.querySelector('.search__button'),
+      searchFilmName = document.querySelectorAll('.search__film');
 
-function searchFunction(text) {
-searchText.forEach((e) => {
-if (e.textContent == text) {
-  e.style.backgroundColor = 'red'
+function searchFunction(input__text) {
+  searchFilmName.forEach((e) => {
+    if (e.textContent.toLowerCase() == input__text.toLowerCase()) {
+     e.style.backgroundColor = 'red';
+    e.scrollIntoView();
+    }
+  });
 }
-});
-}
-input__search.addEventListener('click', (e) =>{
-  searchFunction(input__text.value);
-})
+
+search__button.addEventListener('click', () => {
+    searchFunction(input__text.value);
+  })
+
+
