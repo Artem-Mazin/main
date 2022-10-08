@@ -165,4 +165,17 @@ function nextPoster() {
     i = 0;
   }
 }
-setInterval(nextPoster, 10000);
+let changePoster = setInterval(nextPoster, 10000);
+
+//спрятать постер 
+const wrapper = document.querySelector('.wrapper');
+
+function changeWidth() {
+  if (window.innerWidth < 1300) {
+    clearInterval(changePoster);
+    hideLeftPosters();
+    wrapper.style.maxWidth = '100%';
+  }
+}
+// window.addEventListener('resize', changeWidth)
+changeWidth();
