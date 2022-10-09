@@ -189,14 +189,20 @@ function searchFunction(input__text) {
   searchFilmName.forEach((e) => {
     if (e.textContent.toLowerCase() == input__text.toLowerCase()) {
       e.style.backgroundColor = 'red';
+      function clearSearch() {
+        e.style.backgroundColor = ''
+      }
+      setTimeout((clearSearch), 4000);
       e.scrollIntoView();
     }
   });
 }
 
+
 search__button.addEventListener('click', (e) => {
   e.preventDefault();
   searchFunction(input__text.value);
+  input__text.value = '';
 })
 
 // Сортировка фильмов
@@ -211,5 +217,4 @@ function db() {
 db();
 console.dir(array);
 array.sort();
-
 
