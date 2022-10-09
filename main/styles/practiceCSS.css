@@ -172,6 +172,9 @@ h6 {
   padding: 0.2em;
   border-radius: 0.2em;
 }
+.input__text::placeholder {
+font-style: italic;
+}
 .search__button {
     font-size: 1.2em;
     padding: 0.2em;

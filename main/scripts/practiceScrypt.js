@@ -182,20 +182,34 @@ changeWidth();
 
 // Поиск
 const input__text = document.querySelector('.input__text'),
-      search__button = document.querySelector('.search__button'),
-      searchFilmName = document.querySelectorAll('.search__film');
+  search__button = document.querySelector('.search__button'),
+  searchFilmName = document.querySelectorAll('.search__film');
 
 function searchFunction(input__text) {
   searchFilmName.forEach((e) => {
     if (e.textContent.toLowerCase() == input__text.toLowerCase()) {
-     e.style.backgroundColor = 'red';
-    e.scrollIntoView();
+      e.style.backgroundColor = 'red';
+      e.scrollIntoView();
     }
   });
 }
 
-search__button.addEventListener('click', () => {
-    searchFunction(input__text.value);
-  })
+search__button.addEventListener('click', (e) => {
+  e.preventDefault();
+  searchFunction(input__text.value);
+})
+
+// Сортировка фильмов
+
+const movieDB = document.querySelectorAll('.card__title');
+let array = [];
+function db() {
+  movieDB.forEach(function (title) {
+    array.push(title.innerText);
+  });
+}
+db();
+console.dir(array);
+array.sort();
 
 
