@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/main/styles/practiceCSS.css" />
-    <link rel="import" href="/main/TheInformer.html" />
+    <link rel="stylesheet" href="styles/practiceCSS.css" />
+    <link rel="import" href="TheInformer.html" />
     <title>Practice</title>
   </head>
 
@@ -18,14 +18,18 @@
               <span class="bar"></span>
             </div>
             <form class="search">
-              <input type="text" class="input__text" placeholder="Поиск фильма">
-              <input type="submit" value="Поиск" class="search__button">
+              <input
+                type="text"
+                class="input__text"
+                placeholder="Поиск фильма"
+              />
+              <input type="submit" value="Поиск" class="search__button" />
             </form>
-            
+
             <ul class="menu">
               <li><a href="#">раз</a></li>
               <li><a href="#">два</a></li>
-              <li><a href="#">три</a></li>
+              <li><a href="#" class="click__modal__hide">Связаться</a></li>
             </ul>
           </div>
         </div>
@@ -38,6 +42,13 @@
       </div>
       <div class="footer"></div>
     </div>
-    <script src="/main/scripts/practiceScrypt.js"></script>
+    <div class="modal modal__hide">
+      <div class="modal__content">Реклама</div>
+      <form action="#" class="modal__form">
+        <div class="modal__title">Контакты</div>
+        <button class="btn">Связаться</button>
+      </form>
+    </div>
+    <script src="scripts/practiceScrypt.js"></script>
   </body>
 </html>

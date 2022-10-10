@@ -218,3 +218,10 @@ db();
 console.dir(array);
 array.sort();
 
+// Модальное окно
+const clickModal = document.querySelector('.click__modal__hide'),
+modal = document.querySelector('.modal')
+function openModal () {
+  modal.classList.toggle('modal__hide')
+}
+clickModal.addEventListener('click', openModal);
