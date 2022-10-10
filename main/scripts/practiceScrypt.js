@@ -84,6 +84,7 @@ new card(
 ).render();
 
 // открывание/закрывание меню
+
 const clickHamb = document.querySelector(".hamb"),
   menu = document.querySelector(".menu");
 clickHamb.addEventListener("click", function () {
@@ -97,6 +98,7 @@ menu.addEventListener("mouseleave", function () {
 });
 
 // подсветка карточек
+
 const cards = document.querySelectorAll(".card"),
   card__image = document.querySelectorAll(".card__image");
 
@@ -112,6 +114,7 @@ cards.forEach((card) => {
 });
 
 // левый постер
+
 class left__poster {
   constructor(link, image, parentSelector) {
     this.link = link;
@@ -144,6 +147,7 @@ new left__poster(
 ).render();
 
 // смена постеров
+
 const posters = document.querySelectorAll(".left__poster");
 
 function hideLeftPosters() {
@@ -168,6 +172,7 @@ function nextPoster() {
 let changePoster = setInterval(nextPoster, 10000);
 
 //спрятать постер 
+
 const wrapper = document.querySelector('.wrapper');
 
 function changeWidth() {
@@ -181,6 +186,7 @@ function changeWidth() {
 changeWidth();
 
 // Поиск
+
 const input__text = document.querySelector('.input__text'),
   search__button = document.querySelector('.search__button'),
   searchFilmName = document.querySelectorAll('.search__film');
@@ -219,9 +225,18 @@ console.dir(array);
 array.sort();
 
 // Модальное окно
-const clickModal = document.querySelector('.click__modal__hide'),
-modal = document.querySelector('.modal')
-function openModal () {
-  modal.classList.toggle('modal__hide')
+const modalOpen = document.querySelector('.contact'),
+      modalClose = document.querySelector('.modal__close'),
+      modal = document.querySelector('.modal');
+
+function openModal (e) {
+  e.preventDefault();
+modal.classList.add('modal__open');
 }
-clickModal.addEventListener('click', openModal);
+function closeModal (e) {
+  e.preventDefault();
+  modal.classList.remove('modal__open');
+}
+modalOpen.addEventListener('click', openModal);
+modalClose.addEventListener('click', closeModal);
+
