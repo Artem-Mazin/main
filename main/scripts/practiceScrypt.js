@@ -204,7 +204,6 @@ function searchFunction(input__text) {
   });
 }
 
-
 search__button.addEventListener('click', (e) => {
   e.preventDefault();
   searchFunction(input__text.value);
@@ -227,16 +226,29 @@ array.sort();
 // Модальное окно
 const modalOpen = document.querySelector('.contact'),
       modalClose = document.querySelector('.modal__close'),
-      modal = document.querySelector('.modal');
+      modal = document.querySelector('.modal'),
+      modalBody = document.querySelector('.modal__body');
 
 function openModal (e) {
   e.preventDefault();
-modal.classList.add('modal__open');
+  modal.classList.add('modal__open');
 }
+
 function closeModal (e) {
   e.preventDefault();
   modal.classList.remove('modal__open');
+  clearTimeout(modalTimer);
 }
 modalOpen.addEventListener('click', openModal);
+modalBody.addEventListener('click', (e) => {
+  if (e.target === modalBody) {
+    e.preventDefault();
+    modal.classList.remove('modal__open');
+  }
+})
 modalClose.addEventListener('click', closeModal);
+
+const modalTimer = setTimeout(function() {
+  modal.classList.add('modal__open');
+}, 15000);
 
