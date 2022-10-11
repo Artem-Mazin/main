@@ -11,6 +11,7 @@ class card {
     const element = document.createElement("div");
     element.innerHTML = `
     <div class="card ">
+    <button class='card__like__btn'>+</button>
     <a href='${this.link}' class="card__item" target="blank">
       <h3 class="card__title search__film">${this.title}</h3>
       <img src="${this.image}" class="card__image"></img>
@@ -224,6 +225,7 @@ console.dir(array);
 array.sort();
 
 // Модальное окно
+
 const modalOpen = document.querySelector('.contact'),
       modalClose = document.querySelector('.modal__close'),
       modal = document.querySelector('.modal'),
@@ -252,3 +254,18 @@ const modalTimer = setTimeout(function() {
   modal.classList.add('modal__open');
 }, 15000);
 
+// Избранные фильмы
+
+const likeFilmBtns = document.querySelectorAll('.card__like__btn');
+
+likeFilmBtns.forEach((likeBtn) => {
+  likeBtn.addEventListener("click", function (e) {
+    e.target.classList.toggle("like__active");
+    new card(
+      "/TheInformer.html",
+      "The Informer",
+      "https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg",
+      ".content"
+    ).render();
+  });
+});

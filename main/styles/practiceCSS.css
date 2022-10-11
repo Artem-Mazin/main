@@ -239,6 +239,7 @@ a:link {
   margin: 0.6em 0.6em 0.7em 0.4em;
   border-radius: 0.5em;
   box-shadow: 0.5em 0.5em 0.8em;
+  position: relative;
 }
 
 .card__active {
@@ -259,6 +260,15 @@ a:link {
   font-size: 1.2em;
   padding: 0.5em;
   color: whitesmoke;
+}
+
+.card__like__btn {
+position: absolute;
+top: 0.2em;
+right: 0.2em;
+font-size: 2em;
+color: #e9e6e6;
+background-color: rgba(80, 80, 80, 0);
 }
 
 .card__image {
