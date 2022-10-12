@@ -271,6 +271,10 @@ color: #e9e6e6;
 background-color: rgba(80, 80, 80, 0);
 }
 
+.like__active {
+  color: black;
+}
+
 .card__image {
   height: 14em;
   width: 10em;

@@ -258,14 +258,19 @@ const modalTimer = setTimeout(function() {
 
 const likeFilmBtns = document.querySelectorAll('.card__like__btn');
 
-likeFilmBtns.forEach((likeBtn) => {
-  likeBtn.addEventListener("click", function (e) {
-    e.target.classList.toggle("like__active");
-    new card(
-      "/TheInformer.html",
-      "The Informer",
-      "https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg",
-      ".content"
-    ).render();
+likeFilmBtns.forEach((likeBtn, i) => {
+  likeBtn.addEventListener("click", function () {
+    this.classList.toggle("like__active");
+   
+    const item = cards[i].cloneNode(true),
+          btn = item.querySelector('button'),
+          active = document.querySelector('.like__active'),
+          content = document.querySelector('.content');
+
+          content.append(item);
+          btn.remove();
+    if (!active) {
+      item.remove();
+    } 
   });
 });
