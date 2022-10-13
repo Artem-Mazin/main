@@ -227,9 +227,9 @@ array.sort();
 // Модальное окно
 
 const modalOpen = document.querySelector(".contact"),
-      modalClose = document.querySelector(".modal__close"),
-      modal = document.querySelector(".modal"),
-      modalBody = document.querySelector(".modal__body");
+  modalClose = document.querySelector(".modal__close"),
+  modal = document.querySelector(".modal"),
+  modalBody = document.querySelector(".modal__body");
 
 function openModal(e) {
   e.preventDefault();
@@ -257,31 +257,51 @@ const modalTimer = setTimeout(function () {
 
 // Второе модальное окно для избранных фильмов
 
-const modal2 = modal.cloneNode(true),
-      modal2Open = document.querySelector(".favorite__films");
+const modal2 = modal.cloneNode(true);
 document.body.append(modal2);
-modal2Open.addEventListener("click", openModal);
+
+const  modal2Open = document.querySelector(".favorite__films"),
+  modal2Close = modal2.querySelector(".modal__close"),
+  modal2Content = modal2.querySelector('.modal__content');
+modal2Content.classList.add('modal2__content');
+
+function openModal2(e) {
+  e.preventDefault();
+  modal2.classList.add("modal__open");
+}
+function closeModal2(e) {
+  e.preventDefault();
+  modal2.classList.remove("modal__open");
+}
+
+modal2Open.addEventListener("click", openModal2);
+modal2.querySelector('.modal__title').remove();
+modal2.querySelectorAll('.modal__text').forEach((e) => {
+  e.remove();
+})
+modal2Close.addEventListener("click", closeModal2);
 
 // Избранные фильмы
 
-const likeFilmBtns = document.querySelectorAll(".card__like__btn"),
-      modalText = document.querySelector('.modal__text');
+const likeFilmBtns = document.querySelectorAll(".card__like__btn");
 
 likeFilmBtns.forEach((likeBtn, i) => {
-  likeBtn.addEventListener("click", function () {
+  likeBtn.addEventListener("click", function (e) {
+    e.preventDefault();
     this.classList.toggle("like__active");
 
-    const item = cards[i].cloneNode(true),
-          btn = item.querySelector("button"),
-          active = document.querySelector(".like__active");
-          item.className = 'item__clone';
+    const clon = cards[i].cloneNode(true),
+      btn = clon.querySelector("button"),
+      active = document.querySelector(".like__active");
+    clon.className = 'item__clone';
     if (active) {
-      modalText.append(item);
+      modal2Content.append(clon);
       btn.remove();
 
-      item.append(createDeleteButton());
+      clon.append(createDeleteButton());
 
-      function deleteClone() {
+      function deleteClone(e) {
+        e.preventDefault();
         this.parentNode.remove();
       }
 

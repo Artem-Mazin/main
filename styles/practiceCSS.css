@@ -324,6 +324,12 @@ background-color: rgba(80, 80, 80, 0);
   padding: 2em;
   position: relative;
 }
+.modal2__content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  max-width: 50%;
+}
 .modal__open {
   opacity: 1;
   visibility: visible;
