@@ -172,15 +172,15 @@ function nextPoster() {
 }
 let changePoster = setInterval(nextPoster, 10000);
 
-//спрятать постер 
+//спрятать постер
 
-const wrapper = document.querySelector('.wrapper');
+const wrapper = document.querySelector(".wrapper");
 
 function changeWidth() {
   if (window.innerWidth < 1300) {
     clearInterval(changePoster);
     hideLeftPosters();
-    wrapper.style.maxWidth = '100%';
+    wrapper.style.maxWidth = "100%";
   }
 }
 // window.addEventListener('resize', changeWidth)
@@ -188,32 +188,32 @@ changeWidth();
 
 // Поиск
 
-const input__text = document.querySelector('.input__text'),
-  search__button = document.querySelector('.search__button'),
-  searchFilmName = document.querySelectorAll('.search__film');
+const input__text = document.querySelector(".input__text"),
+  search__button = document.querySelector(".search__button"),
+  searchFilmName = document.querySelectorAll(".search__film");
 
 function searchFunction(input__text) {
   searchFilmName.forEach((e) => {
     if (e.textContent.toLowerCase() == input__text.toLowerCase()) {
-      e.style.backgroundColor = 'red';
+      e.style.backgroundColor = "red";
       function clearSearch() {
-        e.style.backgroundColor = ''
+        e.style.backgroundColor = "";
       }
-      setTimeout((clearSearch), 4000);
+      setTimeout(clearSearch, 4000);
       e.scrollIntoView();
     }
   });
 }
 
-search__button.addEventListener('click', (e) => {
+search__button.addEventListener("click", (e) => {
   e.preventDefault();
   searchFunction(input__text.value);
-  input__text.value = '';
-})
+  input__text.value = "";
+});
 
 // Сортировка фильмов
 
-const movieDB = document.querySelectorAll('.card__title');
+const movieDB = document.querySelectorAll(".card__title");
 let array = [];
 function db() {
   movieDB.forEach(function (title) {
@@ -226,51 +226,75 @@ array.sort();
 
 // Модальное окно
 
-const modalOpen = document.querySelector('.contact'),
-      modalClose = document.querySelector('.modal__close'),
-      modal = document.querySelector('.modal'),
-      modalBody = document.querySelector('.modal__body');
+const modalOpen = document.querySelector(".contact"),
+      modalClose = document.querySelector(".modal__close"),
+      modal = document.querySelector(".modal"),
+      modalBody = document.querySelector(".modal__body");
 
-function openModal (e) {
+function openModal(e) {
   e.preventDefault();
-  modal.classList.add('modal__open');
+  modal.classList.add("modal__open");
 }
 
-function closeModal (e) {
+function closeModal(e) {
   e.preventDefault();
-  modal.classList.remove('modal__open');
+  modal.classList.remove("modal__open");
   clearTimeout(modalTimer);
 }
-modalOpen.addEventListener('click', openModal);
-modalBody.addEventListener('click', (e) => {
+modalOpen.addEventListener("click", openModal);
+modalBody.addEventListener("click", (e) => {
   if (e.target === modalBody) {
     e.preventDefault();
-    modal.classList.remove('modal__open');
+    modal.classList.remove("modal__open");
   }
-})
-modalClose.addEventListener('click', closeModal);
+});
+modalClose.addEventListener("click", closeModal);
 
-const modalTimer = setTimeout(function() {
-  modal.classList.add('modal__open');
+const modalTimer = setTimeout(function () {
+  modal.classList.add("modal__open");
 }, 15000);
+
+
+// Второе модальное окно для избранных фильмов
+
+const modal2 = modal.cloneNode(true),
+      modal2Open = document.querySelector(".favorite__films");
+document.body.append(modal2);
+modal2Open.addEventListener("click", openModal);
 
 // Избранные фильмы
 
-const likeFilmBtns = document.querySelectorAll('.card__like__btn');
+const likeFilmBtns = document.querySelectorAll(".card__like__btn"),
+      modalText = document.querySelector('.modal__text');
 
 likeFilmBtns.forEach((likeBtn, i) => {
   likeBtn.addEventListener("click", function () {
     this.classList.toggle("like__active");
-   
-    const item = cards[i].cloneNode(true),
-          btn = item.querySelector('button'),
-          active = document.querySelector('.like__active'),
-          content = document.querySelector('.content');
 
-          content.append(item);
-          btn.remove();
-    if (!active) {
-      item.remove();
-    } 
+    const item = cards[i].cloneNode(true),
+          btn = item.querySelector("button"),
+          active = document.querySelector(".like__active");
+          item.className = 'item__clone';
+    if (active) {
+      modalText.append(item);
+      btn.remove();
+
+      item.append(createDeleteButton());
+
+      function deleteClone() {
+        this.parentNode.remove();
+      }
+
+      function createDeleteButton() {
+        const deleteItem = document.createElement("input");
+        deleteItem.type = "button";
+        deleteItem.value = "Delete";
+        deleteItem.className = "Delete__btn";
+        deleteItem.addEventListener("click", deleteClone);
+        return deleteItem;
+      }
+    }
   });
 });
+
+

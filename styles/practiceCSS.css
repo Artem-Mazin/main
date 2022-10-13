@@ -179,6 +179,14 @@ h6 {
   border-radius: 0.2em;
 }
 
+.Delete__btn {
+  font-size: 1.2em;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  background-color:rgba(80, 80, 80, 0.6);
+  color: #e9e6e6;
+}
+
 /* скрытое меню */
 .menu {
   display: none;
@@ -279,6 +287,10 @@ background-color: rgba(80, 80, 80, 0);
   height: 14em;
   width: 10em;
   object-fit: cover;
+}
+
+.item__clone {
+
 }
 
 .footer {
