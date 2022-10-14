@@ -335,4 +335,7 @@ likeFilmBtns.forEach((likeBtn, i) => {
   });
 });
 
+// Таймер
+
+
 
