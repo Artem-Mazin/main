@@ -11,7 +11,7 @@ class card {
     const element = document.createElement("div");
     element.innerHTML = `
     <div class="card ">
-    <button class='card__like__btn'>+</button>
+    <button class='card__like__btn'>&#10084</button>
     <a href='${this.link}' class="card__item" target="blank">
       <h3 class="card__title search__film">${this.title}</h3>
       <img src="${this.image}" class="card__image"></img>
@@ -138,13 +138,13 @@ class left__poster {
 new left__poster(
   "",
   "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/ef613c33-08f6-4c7c-890e-3a0f5f71cf1d/orig",
-  ".container"
+  ".poster__and__timer"
 ).render();
 
 new left__poster(
   "",
   "https://www.film.ru/sites/default/files/movies/posters/Pulp-Fiction-3.jpg",
-  ".container"
+  ".poster__and__timer"
 ).render();
 
 // смена постеров
@@ -172,7 +172,7 @@ function nextPoster() {
 }
 let changePoster = setInterval(nextPoster, 10000);
 
-//спрятать постер
+//спрятать постер 
 
 const wrapper = document.querySelector(".wrapper");
 
@@ -185,6 +185,20 @@ function changeWidth() {
 }
 // window.addEventListener('resize', changeWidth)
 changeWidth();
+
+// Спрятать таймер
+
+const timer = document.querySelector('.timer__container');
+
+function hideTimer() {
+  timer.style.display = 'none';
+}
+function hideTimerIf() {
+  if (window.innerWidth < 1300) {
+    hideTimer();
+  }
+}
+hideTimerIf();
 
 // Поиск
 
