@@ -261,8 +261,8 @@ const modal2 = modal.cloneNode(true);
 document.body.append(modal2);
 
 const  modal2Open = document.querySelector(".favorite__films"),
-  modal2Close = modal2.querySelector(".modal__close"),
-  modal2Content = modal2.querySelector('.modal__content');
+       modal2Close = modal2.querySelector(".modal__close"),
+       modal2Content = modal2.querySelector('.modal__content');
 modal2Content.classList.add('modal2__content');
 
 function openModal2(e) {
@@ -291,12 +291,16 @@ likeFilmBtns.forEach((likeBtn, i) => {
     this.classList.toggle("like__active");
 
     const clon = cards[i].cloneNode(true),
-      btn = clon.querySelector("button"),
-      active = document.querySelector(".like__active");
+          btn = clon.querySelector("button"),
+          clonImage = clon.querySelector('img'),
+          clonTitle = clon.querySelector('h3'),
+          active = document.querySelector(".like__active");
     clon.className = 'item__clone';
     if (active) {
       modal2Content.append(clon);
       btn.remove();
+      clonImage.classList.add('clon__image');
+      clonTitle.classList.add('clon__title');
 
       clon.append(createDeleteButton());
 

@@ -118,6 +118,7 @@ h6 {
   top: 0px;
   background-color: dimgray;
   margin-top: 5em;
+  z-index: 2;
 }
 .navigation {
   padding: 1.5em;
@@ -179,17 +180,10 @@ h6 {
   border-radius: 0.2em;
 }
 
-.Delete__btn {
-  font-size: 1.2em;
-  padding: 0.2em;
-  border-radius: 0.2em;
-  background-color:rgba(80, 80, 80, 0.6);
-  color: #e9e6e6;
-}
-
 /* скрытое меню */
 .menu {
-  display: none;
+  overflow: hidden;
+  opacity: 0;
   background-color: black;
   position: absolute;
   left: 0;
@@ -202,6 +196,9 @@ h6 {
 }
 .menu._active {
   display: block;
+  overflow: visible;
+  opacity: 1;
+  transition-duration: 0.8s;
 }
 .menu li {
   margin: 1em 2em;
@@ -265,18 +262,22 @@ a:link {
 
 .card__title {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 0.5em;
+  max-width: 7em;
+  white-space: nowrap;
   color: whitesmoke;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .card__like__btn {
-position: absolute;
-top: 0.2em;
-right: 0.2em;
-font-size: 2em;
-color: #e9e6e6;
-background-color: rgba(80, 80, 80, 0);
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  font-size: 2em;
+  color: #e9e6e6;
+  background-color: rgba(80, 80, 80, 0);
 }
 
 .like__active {
@@ -284,13 +285,36 @@ background-color: rgba(80, 80, 80, 0);
 }
 
 .card__image {
-  height: 14em;
-  width: 10em;
+  height: 12em;
+  width: 8em;
   object-fit: cover;
 }
 
-.item__clone {
+/* Клон карточек */
 
+.item__clone {
+  text-align: center;
+  background-color: rgba(10, 10, 10, 0.4);
+  margin: 0.7em;
+  border-radius: 0.3em;
+  box-shadow: 0.3em 0.3em 0.4em;
+}
+.clon__image {
+  height: 9em;
+  width: 7em;
+}
+.clon__title {
+  color: rgb(48, 48, 48);
+  max-width: 6em;
+  white-space: nowrap;
+  padding: 0.3em;
+}
+.Delete__btn {
+  font-size: 0.9em;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  background-color: rgba(80, 80, 80, 0.6);
+  color: #e9e6e6;
 }
 
 .footer {
@@ -309,6 +333,7 @@ background-color: rgba(80, 80, 80, 0);
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease 0s;
+  z-index: 3;
 }
 .modal__body {
   min-height: 100%;
