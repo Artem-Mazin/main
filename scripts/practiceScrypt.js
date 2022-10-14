@@ -337,5 +337,41 @@ likeFilmBtns.forEach((likeBtn, i) => {
 
 // Таймер
 
+const deadLine = '2023.10.10';
 
+function getTimeRemaining(endtime) {
+  const t = Date.parse(endtime) - Date.parse(new Date()),
+        days = Math.floor(t / (1000 * 60 * 60 * 24)),
+        hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+        minutes = Math.floor((t / 1000 / 60) % 60);
+  
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes
+  };
+}
 
+function setClock(selector, endTime) {
+  const timer = document.querySelector(selector),
+        days = timer.querySelector('#days'),
+        hours = timer.querySelector('#hours'),
+        minutes = timer.querySelector('#minutes'),
+        timeInterval = setInterval(updateClock, 1000);
+    updateClock();
+
+  function updateClock() {
+        const t = getTimeRemaining(endTime);
+
+        days.innerHTML = t.days;
+        hours.innerHTML = t.hours;
+        minutes.innerHTML = t.minutes;
+
+        if (t.total <= 0) {
+          clearInterval(timeInterval);
+        }
+  }
+}
+
+setClock('.timer', deadLine);

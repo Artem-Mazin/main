@@ -116,7 +116,7 @@ h6 {
   text-align: center;
   position: sticky;
   top: 0px;
-  background-color: dimgray;
+  background-color: rgb(51, 38, 96);
   margin-top: 3em;
   z-index: 2;
 }
@@ -184,7 +184,7 @@ h6 {
 /* скрытое меню */
 .menu {
   display: none;
-  background-color: black;
+  background-color: rgb(21, 17, 36);
   position: absolute;
   left: 0;
   top: 0;
@@ -236,7 +236,7 @@ a:link {
 }
 
 .card {
-  background-color: rgba(10, 10, 10, 0.4);
+  background-color: rgba(28, 29, 117, 0.6);
   margin: 0.6em 0.6em 0.7em 0.4em;
   border-radius: 0.3em;
   box-shadow: 0.3em 0.3em 0.5em;
@@ -244,9 +244,9 @@ a:link {
 }
 
 .card__active {
-  background-color: rgba(80, 80, 80, 0.3);
+  background-color: rgba(76, 64, 124, 0.3);
   box-shadow: none;
-  transition-duration: 0.8s;
+  transition-duration: 1s;
 }
 
 .card__item {
@@ -283,7 +283,7 @@ a:link {
 }
 
 .card__image {
-  height: 12em;
+  height: 11em;
   width: 8em;
   object-fit: cover;
 }
@@ -292,7 +292,7 @@ a:link {
 
 .item__clone {
   text-align: center;
-  background-color: rgba(10, 10, 10, 0.4);
+  background-color: rgba(28, 29, 117, 0.6);
   margin: 0.7em;
   border-radius: 0.3em;
   box-shadow: 0.3em 0.3em 0.4em;
@@ -302,7 +302,7 @@ a:link {
   width: 7em;
 }
 .clon__title {
-  color: rgb(48, 48, 48);
+  color: whitesmoke;
   max-width: 6em;
   white-space: nowrap;
   padding: 0.3em;
@@ -316,7 +316,7 @@ a:link {
 }
 
 .footer {
-  background-color: #8e9eab;
+  background-color: rgb(199, 217, 230);
   min-height: 5em;
 }
 
@@ -325,7 +325,7 @@ a:link {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 10, 10, 0.7);
+  background-color: rgba(5, 5, 11, 0.7);
   top: 0;
   left: 0;
   visibility: hidden;
