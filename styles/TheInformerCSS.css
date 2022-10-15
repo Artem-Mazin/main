@@ -163,25 +163,8 @@ h6 {
   transform: scale(1) translate(0px, -50%);
 }
 
-/* Поиск */
-.search {
-}
-.input__text {
-  font-size: 1.2em;
-  padding: 0.2em;
-  border-radius: 0.2em;
-}
-.input__text::placeholder {
-  font-style: italic;
-}
-.search__button {
-  font-size: 1.1em;
-  padding: 0.3em;
-  border-radius: 0.2em;
-  box-shadow: 0.1em 0.1em 0.2em;
-}
-
 /* скрытое меню */
+
 .menu {
   display: none;
   background-color: rgb(21, 17, 36);
@@ -210,6 +193,10 @@ a:visited {
   color: white;
 }
 
+
+
+/* Карточка */
+
 .container {
   display: flex;
   flex: 1 1 auto;
@@ -237,94 +224,34 @@ a:visited {
   margin: 0 auto;
   background-color: #deeef5;
   flex: 1 1 auto;
+  padding: 1em;
 }
-
 .card {
-  background-color: rgba(28, 29, 117, 0.6);
-  margin: 0.6em 0.6em 0.7em 0.4em;
-  border-radius: 0.3em;
-  box-shadow: 0.3em 0.3em 0.5em;
-  position: relative;
-}
-
-.card__active {
-  background-color: rgba(76, 64, 124, 0.3);
-  box-shadow: none;
-  transition-duration: 1s;
-}
-
-.card__item {
   display: flex;
-  flex-direction: column;
-  padding: 0.4em;
-  padding-top: 0.2em;
-  align-items: center;
+  /* box-shadow: 0.2em 0.2em 0.2em; */
+  box-shadow: 1em 1em 0.2em -0.5em rgba(0, 0, 255, .2);
+  border: 0.1em solid #afdafc;
+  padding: 1em;
 }
-
-.card__title {
-  text-align: center;
-  font-size: 1.1em;
-  padding: 0.35em;
-  max-width: 7em;
-  white-space: nowrap;
-  color: whitesmoke;
-  overflow: hidden;
-  text-overflow: clip;
+.description {
+  padding: 0 1.5em;
+  max-width: 33em;
+  background-color: #bbddff;
 }
-
-.card__like__btn {
-  position: absolute;
-  top: 0.15em;
-  right: 0.2em;
-  font-size: 1.4em;
-  color: #fafafa;
-  background-color: rgba(80, 80, 80, 0);
-  z-index: 1;
+.title {
+font-size: 3em;
+margin-bottom: 1em;
 }
-
-.like__active {
-  color: rgb(124, 2, 2);
+.image {
+  max-width: 30em;
 }
-
-.card__image {
-  height: 11em;
-  width: 8em;
-  object-fit: cover;
-}
-
-/* Клон карточек */
-
-.item__clone {
-  text-align: center;
-  background-color: rgba(28, 29, 117, 0.6);
-  margin: 0.7em;
-  border-radius: 0.3em;
-  box-shadow: 0.3em 0.3em 0.4em;
-}
-.clon__image {
-  height: 9em;
-  width: 7em;
-}
-.clon__title {
-  color: whitesmoke;
-  max-width: 6em;
-  white-space: nowrap;
-  padding: 0.3em;
-}
-.Delete__btn {
-  font-size: 0.9em;
-  padding: 0.2em;
-  border-radius: 0.2em;
-  background-color: rgba(80, 80, 80, 0.6);
-  color: #e9e6e6;
-}
-
-.footer {
-  background-color: rgb(199, 217, 230);
-  min-height: 5em;
+.text {
+  font-size: 1.5em;
+  margin-bottom: 0.7em;
 }
 
 /* Модальное окно */
+
 .modal {
   position: fixed;
   width: 100%;
@@ -413,3 +340,11 @@ padding: 0.7em;
 span {
 font-size: 2em;
 }
+
+/* Футер */
+
+.footer {
+  background-color: rgb(199, 217, 230);
+  min-height: 5em;
+}
+
