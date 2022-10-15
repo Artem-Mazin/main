@@ -296,6 +296,82 @@ modal2.querySelectorAll('.modal__text').forEach((e) => {
 })
 modal2Close.addEventListener("click", closeModal2);
 
+// Третье модальное окно для лучших фильмов
+
+const modal3 = modal.cloneNode(true);
+document.body.append(modal3);
+
+const modal3Open = document.querySelector('.best__films'),
+
+      modal3Content = modal3.querySelector('.modal__content');
+
+modal3Content.classList.add('modal3__content');
+
+function openModal3(e) {
+  e.preventDefault();
+  modal3.classList.add("modal__open");
+}
+function closeModal3(e) {
+  e.preventDefault();
+  modal3.classList.remove("modal__open");
+}
+
+modal3Open.addEventListener("click", openModal3);
+modal3.querySelector('.modal__title').remove();
+modal3.querySelectorAll('.modal__text').forEach((e) => {
+  e.remove();
+})
+
+// Добавляю лучшие фильмы
+
+modal3Content.innerHTML = `
+<button href="" class="modal__close">X</button>
+          <div class="card__modal3"> 
+            <img src="https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg" class="image__modal3"></img>
+            <div class="description__modal3">
+              <h3 class="title__modal3">The Informer</h3>
+              <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, voluptates! Eos facilis
+                accusamus voluptatum doloremque expedita nemo molestias esse voluptate adipisci error exercitationem
+                ipsa, quae placeat voluptas alias ea excepturi, beatae consequatur officia reprehenderit. Quam ea
+                mollitia est excepturi ad?</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In eveniet tempore vero sequi consequuntur corporis hic omnis necessitatibus dolor esse.</p>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, minus dolorum nulla quia, necessitatibus alias voluptatibus debitis sapiente laborum eum similique fuga in nesciunt iusto velit! Provident quaerat unde quae?</p>
+            </div>
+          </div>
+          <div class="modal3__btns">
+          <button href="" class="modal3__prev">&larr;</button>
+          <button href="" class="modal3__next">&rarr;</button>
+          </div>
+
+          <div class="card__modal3"> 
+            <img src="https://www.film.ru/sites/default/files/movies/posters/6038188-914768.jpg" class="image__modal3"></img>
+            <div class="description__modal3">
+              <h3 class="title__modal3">Logan</h3>
+              <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, voluptates! Eos facilis
+                accusamus voluptatum doloremque expedita nemo molestias esse voluptate adipisci error exercitationem
+                ipsa, quae placeat voluptas alias ea excepturi, beatae consequatur officia reprehenderit. Quam ea
+                mollitia est excepturi ad?</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In eveniet tempore vero sequi consequuntur corporis hic omnis necessitatibus dolor esse.</p>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, minus dolorum nulla quia, necessitatibus alias voluptatibus debitis sapiente laborum eum similique fuga in nesciunt iusto velit! Provident quaerat unde quae?</p>
+            </div>
+          </div>
+
+          <div class="card__modal3"> 
+            <img src="https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg" class="image__modal3"></img>
+            <div class="description__modal3">
+              <h3 class="title__modal3">Leon</h3>
+              <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, voluptates! Eos facilis
+                accusamus voluptatum doloremque expedita nemo molestias esse voluptate adipisci error exercitationem
+                ipsa, quae placeat voluptas alias ea excepturi, beatae consequatur officia reprehenderit. Quam ea
+                mollitia est excepturi ad?</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In eveniet tempore vero sequi consequuntur corporis hic omnis necessitatibus dolor esse.</p>
+                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, minus dolorum nulla quia, necessitatibus alias voluptatibus debitis sapiente laborum eum similique fuga in nesciunt iusto velit! Provident quaerat unde quae?</p>
+            </div>
+          </div>
+`
+const modal3Close = modal3.querySelector(".modal__close");
+modal3Close.addEventListener("click", closeModal3);
+
 // Избранные фильмы
 
 const likeFilmBtns = document.querySelectorAll(".card__like__btn");

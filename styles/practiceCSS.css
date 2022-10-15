@@ -292,6 +292,40 @@ a:visited {
   object-fit: cover;
 }
 
+/* Карточки в модальном окне */
+
+.card__modal3 {
+  display: flex;
+  box-shadow: 1em 1em 0.2em -0.5em rgba(0, 0, 255, .2);
+  border: 0.1em solid #afdafc;
+  padding: 1em;
+}
+.description__modal3 {
+  padding: 0 1.5em;
+  background-color: #bbddff;
+}
+.title__modal3 {
+font-size: 3em;
+margin-bottom: 1em;
+}
+.image__modal3 {
+  max-width: 20em;
+}
+.text__modal3 {
+  font-size: 1.5em;
+  margin-bottom: 0.7em;
+}
+.modal3__btns {
+  padding: 1em;
+margin: auto;
+}
+.modal3__prev {
+  font-size: 2em;
+}
+.modal3__next {
+font-size: 2em;
+}
+
 /* Клон карточек */
 
 .item__clone {
@@ -352,6 +386,12 @@ a:visited {
   position: relative;
 }
 .modal2__content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  max-width: 50%;
+}
+.modal3__content {
   display: flex;
   flex-wrap: wrap;
   flex: 1 1 auto;
