@@ -5,17 +5,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/main/styles/TheInformerCSS.css">
+  <link rel="stylesheet" href="styles/TheInformerCSS.css">
   <title>TheInformer</title>
 </head>
 
 <body class="body">
   <div class="wrapper">
+    <div class="header">
+      <div class="navigation">
+        <div class="nav__container">
+          <div class="hamb">
+            <span class="bar"></span>
+          </div>
+
+          <ul class="menu">
+            <li><a href="#" class="best__films">&diams; Лучшие фильмы</a></li>
+            <li><a href="#" class="contact">&diams; Связаться</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
+      <div class="poster__and__timer">
+        <div class="timer__container">
+          <div class="timer__title">До конца обучения осталось:</div>
+          <div class="timer">
+            <div class="timer__block">
+              <span id="days">6</span>
+              дней
+            </div>
+            <div class="timer__block">
+              <span id="hours">20</span>
+              часов
+            </div>
+            <div class="timer__block">
+              <span id="minutes">59</span>
+              минут
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="content"></div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+  <div class="modal">
+    <div class="modal__body">
+      <div class="modal__content">
+        <button href="" class="modal__close">X</button>
+        <div class="modal__title">Lorem, ipsum dolor.</div>
+        <div class="modal__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing.
+        </div>
+        <div class="modal__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit,
+          harum.
+        </div>
+      </div>
     </div>
   </div>
-
-  <script src="/main/scripts/TheInformerJS.js"></script>
+  <script src="scripts/TheInformerJS.js"></script>
 </body>
-
 </html>

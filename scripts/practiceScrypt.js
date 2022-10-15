@@ -23,14 +23,14 @@ class card {
   }
 }
 new card(
-  "/TheInformer.html",
+  "TheInformer.html",
   "The Informer",
   "https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg",
   ".content"
 ).render();
 
 new card(
-  "/Leon.html",
+  "",
   "Leon",
   "https://www.film.ru/sites/default/files/movies/posters/Leon-9.jpg",
   ".content"
@@ -102,7 +102,7 @@ menu.addEventListener("mouseleave", function () {
 // подсветка карточек
 
 const cards = document.querySelectorAll(".card"),
-  card__image = document.querySelectorAll(".card__image");
+      card__image = document.querySelectorAll(".card__image");
 
 cards.forEach((card) => {
   card.addEventListener("mouseenter", function (e) {
@@ -204,8 +204,8 @@ hideTimerIf();
 // Поиск
 
 const input__text = document.querySelector(".input__text"),
-  search__button = document.querySelector(".search__button"),
-  searchFilmName = document.querySelectorAll(".search__film");
+      search__button = document.querySelector(".search__button"),
+      searchFilmName = document.querySelectorAll(".search__film");
 
 function searchFunction(input__text) {
   searchFilmName.forEach((e) => {
@@ -242,9 +242,9 @@ array.sort();
 // Модальное окно
 
 const modalOpen = document.querySelector(".contact"),
-  modalClose = document.querySelector(".modal__close"),
-  modal = document.querySelector(".modal"),
-  modalBody = document.querySelector(".modal__body");
+      modalClose = document.querySelector(".modal__close"),
+      modal = document.querySelector(".modal"),
+      modalBody = document.querySelector(".modal__body");
 
 function openModal(e) {
   e.preventDefault();
@@ -341,8 +341,8 @@ likeFilmBtns.forEach((likeBtn, i) => {
 const endTime = new Date('2023.10.10');
 
 function calculateTime() {
-  const startTime = new Date();
-  const t = endTime - startTime,
+  const startTime = new Date(),
+        t = endTime - startTime,
         days = Math.floor(t / (1000 * 60 * 60 * 24)),
         hours = Math.floor(t / (1000 * 60 * 60) % 24),
         minutes = Math.floor(t / (1000 * 60) % 60);
