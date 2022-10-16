@@ -234,9 +234,9 @@ a:visited {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex: 1 1 auto;
   margin: 0 auto;
   background-color: #deeef5;
-  flex: 1 1 auto;
 }
 
 .card {
@@ -309,11 +309,13 @@ font-size: 3em;
 margin-bottom: 1em;
 }
 .image__modal3 {
-  max-width: 20em;
+  max-width: 50%;
+  object-fit: contain;
 }
 .text__modal3 {
   font-size: 1.5em;
   margin-bottom: 0.7em;
+
 }
 .modal3__btns {
   padding: 1em;
@@ -321,6 +323,7 @@ margin: auto;
 }
 .modal3__prev {
   font-size: 2em;
+  margin-right: 5em;
 }
 .modal3__next {
 font-size: 2em;

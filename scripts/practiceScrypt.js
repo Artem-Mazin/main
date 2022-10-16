@@ -102,7 +102,7 @@ menu.addEventListener("mouseleave", function () {
 // подсветка карточек
 
 const cards = document.querySelectorAll(".card"),
-      card__image = document.querySelectorAll(".card__image");
+  card__image = document.querySelectorAll(".card__image");
 
 cards.forEach((card) => {
   card.addEventListener("mouseenter", function (e) {
@@ -204,8 +204,8 @@ hideTimerIf();
 // Поиск
 
 const input__text = document.querySelector(".input__text"),
-      search__button = document.querySelector(".search__button"),
-      searchFilmName = document.querySelectorAll(".search__film");
+  search__button = document.querySelector(".search__button"),
+  searchFilmName = document.querySelectorAll(".search__film");
 
 function searchFunction(input__text) {
   searchFilmName.forEach((e) => {
@@ -242,9 +242,9 @@ array.sort();
 // Модальное окно
 
 const modalOpen = document.querySelector(".contact"),
-      modalClose = document.querySelector(".modal__close"),
-      modal = document.querySelector(".modal"),
-      modalBody = document.querySelector(".modal__body");
+  modalClose = document.querySelector(".modal__close"),
+  modal = document.querySelector(".modal"),
+  modalBody = document.querySelector(".modal__body");
 
 function openModal(e) {
   e.preventDefault();
@@ -275,9 +275,9 @@ const modalTimer = setTimeout(function () {
 const modal2 = modal.cloneNode(true);
 document.body.append(modal2);
 
-const  modal2Open = document.querySelector(".favorite__films"),
-       modal2Close = modal2.querySelector(".modal__close"),
-       modal2Content = modal2.querySelector('.modal__content');
+const modal2Open = document.querySelector(".favorite__films"),
+  modal2Close = modal2.querySelector(".modal__close"),
+  modal2Content = modal2.querySelector('.modal__content');
 modal2Content.classList.add('modal2__content');
 
 function openModal2(e) {
@@ -303,7 +303,7 @@ document.body.append(modal3);
 
 const modal3Open = document.querySelector('.best__films'),
 
-      modal3Content = modal3.querySelector('.modal__content');
+  modal3Content = modal3.querySelector('.modal__content');
 
 modal3Content.classList.add('modal3__content');
 
@@ -326,6 +326,10 @@ modal3.querySelectorAll('.modal__text').forEach((e) => {
 
 modal3Content.innerHTML = `
 <button href="" class="modal__close">X</button>
+          <div class="modal3__btns">
+          <button href="" class="modal3__prev">&larr;</button>
+          <button href="" class="modal3__next">&rarr;</button>
+          </div>
           <div class="card__modal3"> 
             <img src="https://www.film.ru/sites/default/files/movies/posters/33019018-1084728.jpg" class="image__modal3"></img>
             <div class="description__modal3">
@@ -337,10 +341,6 @@ modal3Content.innerHTML = `
                 <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In eveniet tempore vero sequi consequuntur corporis hic omnis necessitatibus dolor esse.</p>
                 <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, minus dolorum nulla quia, necessitatibus alias voluptatibus debitis sapiente laborum eum similique fuga in nesciunt iusto velit! Provident quaerat unde quae?</p>
             </div>
-          </div>
-          <div class="modal3__btns">
-          <button href="" class="modal3__prev">&larr;</button>
-          <button href="" class="modal3__next">&rarr;</button>
           </div>
 
           <div class="card__modal3"> 
@@ -372,6 +372,59 @@ modal3Content.innerHTML = `
 const modal3Close = modal3.querySelector(".modal__close");
 modal3Close.addEventListener("click", closeModal3);
 
+// Прячу описание лучших фильмов для планшетов и мобилок
+
+if (window.innerWidth < 1300) {
+  const hideDescription = modal3Content.querySelectorAll('.description__modal3'),
+    imageModal3 = modal3.querySelectorAll('.image__modal3');
+
+  imageModal3.forEach(image => {
+    image.style.maxWidth = '100%';
+  });
+
+  hideDescription.forEach(description => {
+    description.remove();
+  });
+}
+
+// Слайдер для лучших фильмов
+
+const cardModal3 = document.querySelectorAll('.card__modal3'),
+  nextBtn = document.querySelector('.modal3__next'),
+  prevBtn = document.querySelector('.modal3__prev');
+
+function hideCardModal3() {
+  cardModal3.forEach(card => {
+    card.style.display = 'none';
+  })
+}
+function showCardModal3(i = 0) {
+  cardModal3[i].style.display = 'flex';
+}
+hideCardModal3();
+showCardModal3();
+
+let x = 1;
+function nextCard() {
+  hideCardModal3();
+  showCardModal3(x);
+  x++;
+  if (x > cardModal3.length - 1) {
+    x = 0;
+  } 
+}
+function prevCard() {
+  hideCardModal3();
+  showCardModal3(x);
+  x--;
+  if (x < 0) {
+    x = cardModal3.length - 1;
+  }
+}
+ 
+nextBtn.addEventListener('click', nextCard);
+prevBtn.addEventListener('click', prevCard);
+
 // Избранные фильмы
 
 const likeFilmBtns = document.querySelectorAll(".card__like__btn");
@@ -382,10 +435,10 @@ likeFilmBtns.forEach((likeBtn, i) => {
     this.classList.toggle("like__active");
 
     const clon = cards[i].cloneNode(true),
-          btn = clon.querySelector("button"),
-          clonImage = clon.querySelector('img'),
-          clonTitle = clon.querySelector('h3'),
-          active = document.querySelector(".like__active");
+      btn = clon.querySelector("button"),
+      clonImage = clon.querySelector('img'),
+      clonTitle = clon.querySelector('h3'),
+      active = document.querySelector(".like__active");
     clon.className = 'item__clone';
     if (active) {
       modal2Content.append(clon);
@@ -418,18 +471,18 @@ const endTime = new Date('2023.10.10');
 
 function calculateTime() {
   const startTime = new Date(),
-        t = endTime - startTime,
-        days = Math.floor(t / (1000 * 60 * 60 * 24)),
-        hours = Math.floor(t / (1000 * 60 * 60) % 24),
-        minutes = Math.floor(t / (1000 * 60) % 60);
+    t = endTime - startTime,
+    days = Math.floor(t / (1000 * 60 * 60 * 24)),
+    hours = Math.floor(t / (1000 * 60 * 60) % 24),
+    minutes = Math.floor(t / (1000 * 60) % 60);
 
   const daysContainer = document.querySelector('#days'),
-        hoursContainer = document.querySelector('#hours'),
-        minutesContainer = document.querySelector('#minutes');
+    hoursContainer = document.querySelector('#hours'),
+    minutesContainer = document.querySelector('#minutes');
 
-    daysContainer.innerHTML = days;
-    hoursContainer.innerHTML = hours;
-    minutesContainer.innerHTML = minutes;
+  daysContainer.innerHTML = days;
+  hoursContainer.innerHTML = hours;
+  minutesContainer.innerHTML = minutes;
 }
 function finalVersionTime() {
   setInterval(calculateTime, 1000)
